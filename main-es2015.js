@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div class=\"py-5 text-center\">\r\n    <img class=\"d-block mx-auto mb-3\" src=\"../assets/img/icons8-coronavirus-64.png\" alt=\"\" width=\"72\" height=\"72\">\r\n    <h2>Covid-19 impact estimator</h2>\r\n    <p class=\"lead\">Facebook and Andela #BuildForSDG Challenge 2020. </p>\r\n  </div>\r\n\r\n  <div class=\"col-md-12\">\r\n    <h4 class=\"text-center mb-4\">Calculate covid-19 impact</h4>\r\n    <form border class=\"mt-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6 mb-3\">\r\n          <label for=\"population\">Population:</label>\r\n          <input\r\n              type=\"number\"\r\n              id=\"population\"\r\n              for=\"data-population\"\r\n              class=\"form-control\"\r\n              name=\"data-population\"\r\n              data-population=\"\"\r\n              placeholder=\"enter population size\"\r\n              required>\r\n        </div>\r\n\r\n        <div class=\"col-md-6 mb-3\">\r\n          <label for=\"time-period\">Time Period</label>\r\n          <input type=\"number\" class=\"form-control\"\r\n                 id=\"time-period\"\r\n                 name=\"data-time-to-elapse\"\r\n                 data-time-to-elapse=\"\"\r\n                 placeholder=\"enter time period\"\r\n                 required>\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 mb-3\">\r\n          <label for=\"country\">Type of time period</label>\r\n          <select class=\"custom-select d-block w-100\" id=\"time-period-type\">\r\n            <option value=\"\">Choose...</option>\r\n            <option name=\"data-period-type\">United States</option>\r\n            <option name=\"data-period-type\">United Kingdom</option>\r\n            <option name=\"data-period-type\">United Arab Emirate</option>\r\n            <option name=\"data-period-type\">United Africa</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 mb-3\">\r\n          <label for=\"reported-cases\">Number of Reported Cases</label>\r\n          <input\r\n                type=\"number\"\r\n                name=\"data-reported-cases\"\r\n                data-reported-cases=\"\"\r\n                class=\"form-control\"\r\n                id=\"reported-cases\"\r\n                placeholder=\"enter number of reported cases\"\r\n                required>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 mb-3\">\r\n          <label for=\"total-hospital-beds\">Total Hospital Beds</label>\r\n          <input\r\n                  type=\"number\"\r\n                  id=\"total-hospital-beds\"\r\n                  name=\"data-total-hospital-beds\"\r\n                  data-total-hospital-beds=\"\"\r\n                  class=\"form-control\"\r\n                  placeholder=\"\"\r\n                  required>\r\n        </div>\r\n\r\n      </div>\r\n      <hr class=\"mb-4\">\r\n\r\n      <div class=\"row\">\r\n          <div>\r\n            <button class=\"btn btn-outline-dark btn-lg\">\r\n               Calculate <i class=\"fas fa-arrow-right\"></i>\r\n            </button>\r\n          </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  </div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div class=\"py-5 text-center\">\r\n    <img class=\"d-block mx-auto mb-3\" src=\"../assets/img/icons8-coronavirus-64.png\" alt=\"\" width=\"72\" height=\"72\">\r\n    <h2>Covid-19 impact estimator</h2>\r\n    <p class=\"lead\">Facebook and Andela #BuildForSDG Challenge 2020. </p>\r\n  </div>\r\n\r\n  <div class=\"col-md-12\">\r\n    <h4 class=\"text-center mb-4\">Calculate covid-19 impact</h4>\r\n    <form\r\n          (ngSubmit)=\"onCalculateImpact()\"\r\n          [formGroup]=\"covid19EstimatorForm\"\r\n        class=\"mt-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-md-6 mb-3\">\r\n          <label for=\"population\">Population:</label>\r\n          <input\r\n              formControlName=\"population\"\r\n              type=\"number\"\r\n              id=\"population\"\r\n              for=\"data-population\"\r\n              class=\"form-control\"\r\n              name=\"data-population\"\r\n              data-population=\"\"\r\n              placeholder=\"enter population size\"\r\n              required>\r\n        </div>\r\n\r\n        <div class=\"col-md-6 mb-3\">\r\n          <label for=\"time-period\">Time Period</label>\r\n          <input type=\"number\"\r\n                 formControlName=\"timeToElapse\"\r\n                 class=\"form-control\"\r\n                 id=\"time-period\"\r\n                 name=\"data-time-to-elapse\"\r\n                 data-time-to-elapse=\"\"\r\n                 placeholder=\"enter time period\"\r\n                 required>\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row\">\r\n        <div class=\"col-md-4 mb-3\">\r\n          <label for=\"country\">Type of time period</label>\r\n          <select\r\n                class=\"custom-select d-block w-100\"\r\n                formControlName=\"periodType\"\r\n                id=\"time-period-type\">\r\n            <option value=\"\">Choose Period Type...</option>\r\n            <option value=\"days\">Days</option>\r\n            <option value=\"weeks\">Weeks</option>\r\n            <option value=\"months\">Months</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 mb-3\">\r\n          <label for=\"reported-cases\">Number of Reported Cases</label>\r\n          <input\r\n                type=\"number\"\r\n                formControlName=\"reportedCases\"\r\n                name=\"data-reported-cases\"\r\n                data-reported-cases=\"\"\r\n                class=\"form-control\"\r\n                id=\"reported-cases\"\r\n                placeholder=\"enter number of reported cases\"\r\n                required>\r\n        </div>\r\n\r\n        <div class=\"col-md-4 mb-3\">\r\n          <label for=\"total-hospital-beds\">Total Hospital Beds</label>\r\n          <input\r\n                  type=\"number\"\r\n                  formControlName=\"totalHospitalBeds\"\r\n                  id=\"total-hospital-beds\"\r\n                  name=\"data-total-hospital-beds\"\r\n                  data-total-hospital-beds=\"\"\r\n                  class=\"form-control\"\r\n                  placeholder=\"\"\r\n                  required>\r\n        </div>\r\n\r\n      </div>\r\n      <hr class=\"mb-4\">\r\n\r\n      <div class=\"row\">\r\n          <div>\r\n            <button class=\"btn btn-outline-dark btn-lg\" [disabled]=\"!covid19EstimatorForm.valid\">\r\n               Calculate <i class=\"fas fa-arrow-right\"></i>\r\n            </button>\r\n            <div *ngIf=\"userInputValid\" class=\"impactResult mt-4\">\r\n              <pre>{{ userInput }}</pre>\r\n            </div>\r\n          </div>\r\n      </div>\r\n    </form>\r\n  </div>\r\n  </div>\r\n");
 
 /***/ }),
 
@@ -323,7 +323,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("form {\n  border: 1px solid #625e54;\n  padding: 30px 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n}\n\n.form-control,\n.custom-select {\n  border: 1px solid #625e54;\n}\n\nbutton.btn.btn-outline-dark.btn-lg {\n  box-shadow: 2px 2px 0 1px #00002638;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxvZ3VubW9sYXdtXFxzb3VyY2VcXENoYWxsZW5nZTIwMjBcXEJ1aWxkZm9yU0RHLWNoYWxsZW5nZS00LVVJXFxjb3ZpZDE5LWVzdGltYXRvci9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQ0NGOztBREdBOztFQUdFLHlCQUFBO0FDREY7O0FES0E7RUFDRSxtQ0FBQTtBQ0ZGIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZm9ybSB7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgIzYyNWU1NDtcclxuICBwYWRkaW5nOiAzMHB4IDMwcHg7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcblxyXG5cclxuLmZvcm0tY29udHJvbCxcclxuLmN1c3RvbS1zZWxlY3RcclxuIHtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjNjI1ZTU0O1xyXG4gfVxyXG5cclxuXHJcbmJ1dHRvbi5idG4uYnRuLW91dGxpbmUtZGFyay5idG4tbGcge1xyXG4gIGJveC1zaGFkb3c6IDJweCAycHggMCAxcHggIzAwMDAyNjM4O1xyXG59XHJcbiIsImZvcm0ge1xuICBib3JkZXI6IDFweCBzb2xpZCAjNjI1ZTU0O1xuICBwYWRkaW5nOiAzMHB4IDMwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5mb3JtLWNvbnRyb2wsXG4uY3VzdG9tLXNlbGVjdCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICM2MjVlNTQ7XG59XG5cbmJ1dHRvbi5idG4uYnRuLW91dGxpbmUtZGFyay5idG4tbGcge1xuICBib3gtc2hhZG93OiAycHggMnB4IDAgMXB4ICMwMDAwMjYzODtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("form {\n  border: 1px solid #625e54;\n  padding: 30px 30px;\n  border-radius: 10px;\n  margin-bottom: 20px;\n}\n\n.form-control,\n.custom-select {\n  border: 1px solid #625e54;\n}\n\nbutton.btn.btn-outline-dark.btn-lg {\n  box-shadow: 2px 2px 0 1px #00002638;\n}\n\n.impactResult {\n  background: green;\n  padding: 10px;\n  border-radius: 6px;\n}\n\n.impactResult pre {\n  margin-top: 1rem;\n  color: #fff !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxvZ3VubW9sYXdtXFxzb3VyY2VcXENoYWxsZW5nZTIwMjBcXEJ1aWxkZm9yU0RHLWNoYWxsZW5nZS00LVVJXFxjb3ZpZDE5LWVzdGltYXRvci9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQ0NGOztBREdBOztFQUdFLHlCQUFBO0FDREY7O0FES0E7RUFDRSxtQ0FBQTtBQ0ZGOztBREtBO0VBQ0UsaUJBQUE7RUFDRSxhQUFBO0VBQ0Esa0JBQUE7QUNGSjs7QURJSTtFQUNFLGdCQUFBO0VBQ0Esc0JBQUE7QUNGTiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImZvcm0ge1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICM2MjVlNTQ7XHJcbiAgcGFkZGluZzogMzBweCAzMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxufVxyXG5cclxuXHJcbi5mb3JtLWNvbnRyb2wsXHJcbi5jdXN0b20tc2VsZWN0XHJcbiB7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgIzYyNWU1NDtcclxuIH1cclxuXHJcblxyXG5idXR0b24uYnRuLmJ0bi1vdXRsaW5lLWRhcmsuYnRuLWxnIHtcclxuICBib3gtc2hhZG93OiAycHggMnB4IDAgMXB4ICMwMDAwMjYzODtcclxufVxyXG5cclxuLmltcGFjdFJlc3VsdCB7XHJcbiAgYmFja2dyb3VuZDogZ3JlZW47XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG5cclxuICAgIHByZSB7XHJcbiAgICAgIG1hcmdpbi10b3A6IDFyZW07XHJcbiAgICAgIGNvbG9yOiAjZmZmICFpbXBvcnRhbnQ7XHJcbiAgICAgfVxyXG59XHJcblxyXG4iLCJmb3JtIHtcbiAgYm9yZGVyOiAxcHggc29saWQgIzYyNWU1NDtcbiAgcGFkZGluZzogMzBweCAzMHB4O1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuXG4uZm9ybS1jb250cm9sLFxuLmN1c3RvbS1zZWxlY3Qge1xuICBib3JkZXI6IDFweCBzb2xpZCAjNjI1ZTU0O1xufVxuXG5idXR0b24uYnRuLmJ0bi1vdXRsaW5lLWRhcmsuYnRuLWxnIHtcbiAgYm94LXNoYWRvdzogMnB4IDJweCAwIDFweCAjMDAwMDI2Mzg7XG59XG5cbi5pbXBhY3RSZXN1bHQge1xuICBiYWNrZ3JvdW5kOiBncmVlbjtcbiAgcGFkZGluZzogMTBweDtcbiAgYm9yZGVyLXJhZGl1czogNnB4O1xufVxuLmltcGFjdFJlc3VsdCBwcmUge1xuICBtYXJnaW4tdG9wOiAxcmVtO1xuICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -339,13 +339,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(fb) {
+        this.fb = fb;
         this.title = 'covid19-estimator';
+        this.input = {};
+        this.userInput = {};
+        this.userInputValid = false;
+        // Will use this to populate select option in the template
+        this.daysOfPeriod = ['days', 'weeks', 'months'];
+    }
+    ngOnInit() {
+        this.covid19EstimatorForm = this.fb.group({
+            population: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            timeToElapse: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            periodType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            reportedCases: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            totalHospitalBeds: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
+    }
+    impactCalculator(inputData) {
+        // All covidEstmator function will do all calculations here using the input data object
+        return console.log(`Let's print out our form obj: ${inputData}`);
+    }
+    clearCovid19EstimatorForm() {
+        this.covid19EstimatorForm.reset();
+    }
+    onCalculateImpact() {
+        // check if form is not valid
+        if (!this.covid19EstimatorForm) {
+            return false;
+        }
+        this.userInputValid = true;
+        this.userInput = JSON.stringify(this.covid19EstimatorForm.value);
+        this.impactCalculator(this.userInput);
+        this.clearCovid19EstimatorForm();
     }
 };
+AppComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -373,6 +410,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 
@@ -387,7 +426,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
